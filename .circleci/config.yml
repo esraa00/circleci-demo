@@ -1,12 +1,15 @@
 version: 2.1
 
 jobs:
-  build:
+  get-the-code:
     docker:
       - image: node:latest
     steps:
+      - checkout
       - run:
-          name:
-          command: |
-            echo 'Hello World!'
-            echo 'This is the delivery pipeline'
+          name: run the project
+          command: npm start
+
+      - run:
+          name: test the project
+          command: npm test

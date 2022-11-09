@@ -192,7 +192,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "start": "node sum.js"
   },
   "author": "",
   "license": "ISC"

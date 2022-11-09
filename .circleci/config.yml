@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  get-the-code:
+  build:
     docker:
       - image: node:latest
     steps:
@@ -13,3 +13,7 @@ jobs:
       - run:
           name: test the project
           command: npm test
+workflows:
+  build_and_test:
+    jobs:
+      - get-the-code

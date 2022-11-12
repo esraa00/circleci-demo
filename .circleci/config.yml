@@ -10,6 +10,8 @@ jobs:
           name: install dependencies
           command: npm install
   deploy:
+    docker:
+      - image: node:latest
     steps:
       - run:
           name: run the project

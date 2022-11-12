@@ -8,20 +8,25 @@ jobs:
       - checkout
       - run:
           name: install dependencies
-          command: npm install jest
-
+          command: npm install
+  deploy:
+    steps:
       - run:
           name: run the project
           command: npm start
+      # - run:
+      #     name: run the project
+      #     command: npm start
 
-      - run:
-          name: test the project
-          command: npm test
+      # - run:
+      #     name: test the project
+      #     command: npm test
 
-      - run:
-          name: test the context
-          command: echo $NAME
+      # - run:
+      #     name: test the context
+      #     command: echo $NAME
 workflows:
   build_and_test:
     jobs:
       - build
+      - deploy

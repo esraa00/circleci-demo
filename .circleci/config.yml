@@ -24,7 +24,7 @@ jobs:
       - persist_to_workspace:
           root: ~/app
           paths:
-            - ~/app/**
+            - ./**
 
   deploy:
     executor: docker-executor
@@ -52,4 +52,4 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - deploy
+      # - deploy

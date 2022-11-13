@@ -12,6 +12,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: show all directories
+          command: ls
+      - run:
           name: install dependencies
           command: npm install
       - persist_to_workspace:

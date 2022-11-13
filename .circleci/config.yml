@@ -19,13 +19,14 @@ jobs:
           command: npm install
       - persist_to_workspace:
           root: ~/app
-          paths: ./
+          paths: 
+            - ~/app/**
 
   deploy:
     executor: docker-executor
     steps:
       - attach_workspace:
-        at: ~/app
+         at: ~/
       - run:
           name: list all directories
           command: ls

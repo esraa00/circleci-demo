@@ -15,18 +15,22 @@ jobs:
           name: show all directories
           command: ls
       - run:
+          name: show directory
+          command: pwd
+      - run:
           name: install dependencies
           command: npm install
+
       - persist_to_workspace:
           root: ~/app
-          paths: 
+          paths:
             - ~/app/**
 
   deploy:
     executor: docker-executor
     steps:
       - attach_workspace:
-         at: ~/
+          at: ./
       - run:
           name: list all directories
           command: ls

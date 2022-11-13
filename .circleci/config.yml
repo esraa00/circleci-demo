@@ -14,15 +14,17 @@ jobs:
       - run:
           name: show all directories
           command: ls
+
       - run:
           name: show directory
           command: pwd
+
       - run:
           name: install dependencies
           command: npm install
 
       - persist_to_workspace:
-          root: ~/app
+          root: ~/workspace
           paths:
             - ./**
 

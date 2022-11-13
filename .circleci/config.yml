@@ -39,7 +39,7 @@ jobs:
     executor: docker-executor
     steps:
       - attach_workspace:
-          at: ./
+          at: /myApp
       - run:
           name: list all directories
           command: ls
@@ -61,4 +61,4 @@ workflows:
   build_and_test:
     jobs:
       - build
-      # - deploy
+      - deploy

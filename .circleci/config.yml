@@ -4,7 +4,7 @@ executors:
   docker-executor:
     docker:
       - image: node:latest
-    working_directory: /tmp
+    working_directory: /myApp
 
 jobs:
   build:
@@ -18,7 +18,6 @@ jobs:
       # - run:
       #     name: change directory
       #     command: cd app
-
       - run:
           name: show all directories
           command: ls
@@ -32,7 +31,7 @@ jobs:
           command: npm install
 
       - persist_to_workspace:
-          root: /tmp
+          root: /myApp
           paths:
             - ./**
 
